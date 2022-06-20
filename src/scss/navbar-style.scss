@@ -1,0 +1,18 @@
+.bg-light {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.navbar {
+    background: rgba(249, 249, 249, 0.9)!important;
+    color: black!important;
+    box-shadow: none!important;
+}
+
+.logo {
+    width: 15rem;
+}
+
+.logo-mobile {
+    width: 10rem;
+}

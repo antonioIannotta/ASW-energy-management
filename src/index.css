@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont,'ui-rounded','cursive','Arial Rounded MT Bold','Arial Black';
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New','Arial Rounded MT Bold','Arial Black'
+    monospace;
+}

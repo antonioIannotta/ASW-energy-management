@@ -1,0 +1,36 @@
+.dashboard-app-bar, .dashboard-view {
+    background: #f9f9f9;        
+}
+.dashboard-view {
+    height: 100vh;
+}
+
+.dashboard-toolbar-button {
+    text-transform: capitalize!important;
+    color: inherit!important;
+    font-size: 14px!important;
+    font-weight: 300!important;
+    width: 100%!important;
+    padding-right: 138px!important;
+}
+
+.user-icon-menu-link {
+    color: inherit!important;    
+}
+
+
+@media screen and (min-width: 450px) {
+    .accordion-wrapper {
+        padding: 4rem;
+        margin-top: 4rem;
+    }
+}
+
+.accordion-wrapper {
+    margin-top: 3rem;
+}
+
+
+.logo {
+    padding: 16px;
+}
