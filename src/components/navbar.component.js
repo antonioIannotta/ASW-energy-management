@@ -8,12 +8,10 @@ import {
   Toolbar,
   IconButton,
   Typography,
-  Menu,
   Container,
   Avatar,
   Button,
   Tooltip,
-  MenuItem,
   Link,
   List,
   ListItem,
@@ -26,7 +24,6 @@ import Userfront from "@userfront/react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const pages = ["contatti", "chi-siamo", "dashboard"];
-const settings = ["Contatti", "Inserisci dati", "Logout"];
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -58,12 +55,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 export default function NavbarComponent() {
-  const [anchorElUser] = React.useState(null);
-  const [state, setState] = React.useState({});
-
-  const handleOpenUserMenu = (event) => {};
-
-  const handleCloseUserMenu = () => {};
+  const [state, setState] = React.useState({ left: false });
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -175,50 +167,26 @@ export default function NavbarComponent() {
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <StyledBadge
-                  overlap="circular"
-                  anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-                  variant={Userfront.user.username ? "dot" : ""}
-                >
-                  {Userfront.user.username ? (
-                    <Avatar>
-                      {" "}
-                      {Userfront.user.username
-                        ? Userfront.user.username.toUpperCase()[0]
-                        : ""}{" "}
-                    </Avatar>
-                  ) : (
-                    <AccountCircleIcon
-                      onClick={() => window.open("/login")}
-                      sx={{ fontSize: 40 }}
-                    />
-                  )}
-                </StyledBadge>
-              </IconButton>
+              <StyledBadge
+                overlap="circular"
+                anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                variant={Userfront.user.username ? "dot" : ""}
+              >
+                {Userfront.user.username ? (
+                  <Avatar>
+                    {" "}
+                    {Userfront.user.username
+                      ? Userfront.user.username.toUpperCase()[0]
+                      : ""}{" "}
+                  </Avatar>
+                ) : (
+                  <AccountCircleIcon
+                    onClick={() => window.open("/login")}
+                    sx={{ fontSize: 40 }}
+                  />
+                )}
+              </StyledBadge>
             </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
           </Box>
         </Toolbar>
       </Container>
