@@ -458,7 +458,7 @@ export default class Dashboard extends React.Component {
       </div>
     );
 
-    const container = undefined;    
+    const container = undefined;
 
     const handleOpenUserMenu = (event) => {
       this.setState({

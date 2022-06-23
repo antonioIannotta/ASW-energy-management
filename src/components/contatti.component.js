@@ -25,9 +25,22 @@ export default function Contatti() {
 
   return (
     <Grid container component="main" sx={{ backgroundColor: "#f9f9f9" }}>
-      <Grid item xs={12} sm={6} md={6}>
-        {/*<InitMap />*/}
-      </Grid>
+      <Grid
+        item
+        xs={false}
+        sm={6}
+        md={6}
+        sx={{
+          backgroundImage: "url(https://source.unsplash.com/random)",
+          backgroundRepeat: "no-repeat",
+          backgroundColor: (t) =>
+            t.palette.mode === "light"
+              ? t.palette.grey[50]
+              : t.palette.grey[900],
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
 
       <Grid item xs={12} sm={6} md={6}>
         <Box
