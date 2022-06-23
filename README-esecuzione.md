@@ -1,6 +1,5 @@
 # Installazione
-npm install --legacy-peer-deps
-
+npm install --force
 # Esecuzione server
 cd backend && node server.js
 
